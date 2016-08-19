@@ -1,0 +1,10 @@
+target/
+uploads/
+dependency-reduced-pom.xml
+.settings/
+.mvn/
+.project
+.classpath
+.springBeans
+*.log
+*.sql
