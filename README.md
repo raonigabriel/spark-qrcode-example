@@ -6,7 +6,7 @@ It has the same features as its big brother which is build using SpringBoot: htt
 
 #Features:
 
-1. Based on Spark Framework 2.5 (http://sparkjava.com/)
+1. Based on Spark Framework (http://sparkjava.com/)
 2. Microservice to generate qrcode images  
   1. Produces binary Content-Type (image/png)
   2. Uses the Google zxing library (https://github.com/zxing/zxing)
@@ -16,7 +16,7 @@ It has the same features as its big brother which is build using SpringBoot: htt
 3. Backend caching using caffeine memory-based cache (https://github.com/ben-manes/caffeine)
 4. Logging with sl4j (http://www.slf4j.org/)
 5. Only 2 classes, about 100 lines of code!!! 
-6. Small. Final JAR (shaded) includes everything, it self-contained and it is only 2,6 MB
+6. Small. Final JAR (shaded) includes everything, it self-contained and it is only 2,9 MB
 
 To get the code:
 -------------------
@@ -33,7 +33,7 @@ From the command line with Linux or Windows:
     $ cd spark-qrcode-example
     $ mvn clean package
     $ cd target/
-    $ java -jar spark-qrcode-example-1.0.0.jar
+    $ java -jar spark-qrcode-example-1.0.1.jar
 
 From the command line with Mac:
 
@@ -45,16 +45,16 @@ Access the deployed web application [http://localhost:8080](http://localhost:808
 To create docker image (requires docker tools):
 -------------------	
 
-    $ mvn deploy
+    $ mvn clean package dockerfile:build
     
 To run the image in foreground:
 
-    $docker run --rm -p 8080:8080 -i -t waiamu/spark-qrcode-example
+    $docker run --rm -p 8080:8080 -it raonigabriel/spark-qrcode-example
 
 
 To run the image in background, add  "-d" flag and don use the "--rm" option
     
-    $docker run -p 8080:8080 -i -t -d waiamu/spark-qrcode-example
+    $docker run -p 8080:8080 -it -d raonigabriel/spark-qrcode-example
 
 To work on the code:
 -------------------	
